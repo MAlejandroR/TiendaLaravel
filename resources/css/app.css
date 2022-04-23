@@ -1,0 +1,23 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+header{
+@apply flex flex-row justify-between px-10  items-center bg-gray-300/50 h-15v
+}
+.logueo{
+
+}
+nav{
+
+}
+main{
+ @apply  flex flex-row justify-between m-5 p-10 bg-gray-100 w-50v
+}
+footer{
+
+}
+
+.paginacion{
+    @apply border-2 border-emerald-400 p-10 mt-10
+}
