@@ -25,7 +25,7 @@ Por lo que queremos incorporar las siguientes clases en ***tailwind***:
 4. background-color: FFFFFF (Blanco del main)
 4. background-color: 898989 (negro claro del footer)
 
-Para este cometido editamos el fichero ***tailwind.config.css*** ubicado en la carpeta principal del proyecto y añadimos
+Para este cometido editamos el fichero ***tailwind.config.js*** ubicado en la carpeta principal del proyecto y añadimos
 las clases:
 
 ```json
