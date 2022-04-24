@@ -20,6 +20,7 @@
         @auth
             <h3>Usuario {{auth()->user()->name}}</h3>
             <form action="{{route("logout")}}" method="post">
+                @csrf
                 <x-button>
                     Logout
                 </x-button>
@@ -27,23 +28,27 @@
 
         @endauth
         @guest
-                <form action="{{route('login')}}" method="POST">
-                    @csrf
-                    <x-input type="text" name="email" class="text-xs" size="10" placeholder="email"/>
-                    <x-input type="text" name="password" class="text-xs" size="10" placeholder="password"/>
-                    <br><br>
-                    <x-button>Login</x-button>
-                    <x-ancla ref='{{route("register")}}'>
-                        Registrarse
-                    </x-ancla>
-                </form>
+
+            <form action="{{route('login')}}" method="POST">
+                @csrf
+                <x-input type="text" value="{{old('email')}}" name="email" class="text-xs" size="10"  placeholder="email"/>
+                <x-input type="text" name="password" class="text-xs" size="10" placeholder="password"/>
+                <br><br>
+                <x-button>Login</x-button>
+                <x-ancla ref='{{route("register")}}'>
+                    Registrarse
+                </x-ancla>
+                @if ($errors->any())
+                    <div>Datos incorrectos, vuévelo a intentar</div>
+                @endif
+            </form>
         @endguest
     </div>
 </header>
 <nav class="bg-nav h-10v">
     @yield("menu")
 </nav>
-<main class="bg-main h-65v">
+<main class="bg-main h-65v flex flex-col">
     @yield("contenido")
 </main>
 <footer class="h-10v bg-footer">

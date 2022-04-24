@@ -183,5 +183,39 @@ En blade, podemos saber si estamso logueados, con la directiva ***@auth***, y si
 @endguest
 
 ```
+##### Conexión con la base de datos
 
-Por otro lado, vamos a establecer en la propia cabecera el formulario para loguarnos (usuario y password). Para ello pondremos dos cajas de texto
+* Tenemos que tener una conexión con la base de datos, y haber ejectutado las migraciones que trae laravel para podernos autentificar.
+* Para ello descargamos el docker que ya tiene la base de datos de la tienda y en ella vamos a incorporar las tablas de usuarios para loguearnos
+* 
+###### Instalando un contenedor con docker
+1. Creamos un contenedor llamado mysql a partir de la imagen que tenmos subida a docker hub llamada ***manolo/certificado-web:v2*** Esta imagen trae instalado:
+   1. ***mysql***
+   2. ***phpmyadmin*** (por lo tanto php y apache2)
+   3. en mysql tenemos una base de datos llamada ***dwes*** que es con la que vamos a trabajar
+```shell
+docker run --name mysql -ti manolo/certificado-web:v1 
+```
+
+2. Por comodidad vamos a crearnos un shell que nos arranque el docker con los servicios ***mysql y apache2***. creamos un fichero llamado por ejemplo ***start_docker*** con el siguiente contenido
+```shell
+docker start mysql
+docker exec mysql service mysql start
+docker exec myadl service apache2 start 
+```
+3. Le damos permisos de ejecución
+```shell
+sudo chmos -x start_docker 
+```
+4.- Lo ejecutamos (observa que hay que especificar de manera explícita dónde se ubica el fichero)
+
+```shell
+./start_doker
+```
+###### Parámetros de conexión y ejecutar las migraciones
+
+
+
+
+*Previamente tenm
+Por otro lado, vamos a establecer en la propia cabecera el formulario para loguearnos (usuario y password). Para ello pondremos dos cajas de texto. El único requisito es que los nombres de los inputs
