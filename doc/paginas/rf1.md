@@ -51,10 +51,28 @@ theme: {
 }
 ```
 
-*Para que estos cambios tengan efecto, tenmos que traspilar la nueva configuración a un fichero css. Para ello vamos a ejectuar con ***npm** esta traspilación, para que la herramiento ***postCss*** que tenemos invocada en el fichero ***webpack.mix.js*** haga su trabajo, y genere un fichero ***/public/css/app.css*** con las nuevas clases.
+Para que estos cambios tengan efecto, tenmos que traspilar la nueva configuración a un fichero css. Para ello vamos a ejectuar con ***npm** esta traspilación, para que la herramiento ***postCss*** que tenemos invocada en el fichero ***webpack.mix.js*** haga su trabajo, y genere un fichero ***/public/css/app.css*** con las nuevas clases.
 
-*Como vamos a estar haciendo cambios continuamente, vamos a configurar el sistema, para que esté atento y cada vez que ya
-*Con esto, ahora ya tenemos disponibles las clases de altura y de color de fondo directamente para utilizar
+
+Como vamos a estar haciendo cambios continuamente, vamos a configurar el sistema, para que esté atento y cada vez que el sistema detecte que se ha cambiado cualquier aspecto de la configuración del frot, transpile directemnte
+
+Para ello, donde está invocado el script ***dev*** en el ficheor ***package.json*** aportamos el parámetro ***watch*** y de esta forma lo invcaremos con este parámetro  y ya estará activo de forma permatente
+
+1. Modificamos el fichero ***package.json***
+ ```json
+#...
+  "scripts": {
+        "dev": "npm run development --watch",
+#...
+
+```
+2. Invocamos al scrpt en el terminal (recuerda el & para ejecutarlo en background y que no se quede el terminal bloqueado)
+```shell
+npm run watch & 
+```
+
+
+Con esto, ahora ya tenemos disponibles las clases de altura y de color de fondo directamente para utilizar:
 
 ```css
 h-10v h-15v h-65v bg-header bg-nav bg-main bg-footer
@@ -94,14 +112,18 @@ h-10v h-15v h-65v bg-header bg-nav bg-main bg-footer
 </html>
 
 ```
-*Ahora aportamos el ruteo para poder visualziar la página, en el fichero ***web.php*** Esto cambiará, ya que el layout será un fichero base de coorporativismo entre  las páginas html de nuestro proyecto
+Ahora aportamos el ruteo para poder visualziar la página, en el fichero ***web.php*** Esto cambiará, ya que el layout será un fichero base de coorporativismo entre  las páginas html de nuestro proyecto
 ```php
 Route::get('/', function () {
     return view('layout');
 })->name("principal");
 
 ```
+Como último paso probamos a cargar la página. Para ello levantamos el servidor con el comando de ***artisan*** (recuerda el *****&***** para que no se quede el terminal bloqueado con esta acción)
+```shell
+php artisan serve &
 
+```
 
 
 
