@@ -50,10 +50,41 @@ Para ello utilizaremos diferentes herramientas que vamos a ir referenciando en e
 
 
 
-## diseño de la intefaz gráfica
+## Preparando el sistema para el diseño gráfico y la autenticación
 
-Establecemos las 4 secciones en layout
+*Para la interfaz gráfica, vamos a utilizar *****(tailwindcss)[https://tailwindcss.com/]****
+*Como vamos a utilizar autentificación instalamos el paquete ***breeze*** de laravel que ya trae la instalación de taildwind
 
+```bash
+composer require laravel/breeze
+php artisan breeze:install
+npm install
+npm run dev
+```
+Vemos que nos ha creado una serie de ficheros que carpetas que vamos a comentar.
+
+1. Al requerir ***breeze***, En el fichero ***composer.json*** se ha añadido una línea que indica que vamos a utilizar el paquete ***breeze***
+```json
+  "require": {
+/*....*/
+        "laravel/breeze": "^1.9",
+/*....*/
+    },
+```
+2. Al ejecutar ***run dev*** se ha descargado todos los paquetes que necesitamos para la ejecución en el front, por lo que aparece la carpeta ***node_modules***  con todos los paquetes para ejecutar en el cliente
+
+   ![node_modules](./doc/imagenes/node_modules.png)
+
+***
+
+
+### Implementación de los requisitos funciones
+
+[Pantalla principla y logue](./doc/paginas/rf1.md)
+
+2. Diseñar la página principal con legueo
+3. Funcionalidad a login y pasar a página logueado
+#### 
 
 # Aplicaciones utilizadas
 1. Dia para diagramar
@@ -62,7 +93,7 @@ Establecemos las 4 secciones en layout
 4. [Colores Diseño web ](4. https://www.useit.es/blog/6-paletas-de-colores-para-diseno-web)
 
 ## Requisitos
-1Menú de navegación
+Menú de navegación
 
 1. Establecer las pantallas 
    1. Pantalla princial 

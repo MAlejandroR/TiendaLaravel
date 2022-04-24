@@ -7,5 +7,7 @@
     <x-ancla ref="{{route('familias.index')}}"> Familias </x-ancla>
 @endsection
 @section("contenido")
-    <h1>Listado de productos</h1>
+    <div>
+        <h1>Tienda molona</h1>
+    </div>
 @endsection
