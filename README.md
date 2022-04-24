@@ -82,36 +82,64 @@ Vemos que nos ha creado una serie de ficheros que carpetas que vamos a comentar.
 
 [Pantalla principal y logueo](./doc/paginas/rf1.md)
 
-2. Diseñar la página principal con legueo
-3. Funcionalidad a login y pasar a página logueado
-#### 
+[//]: # ()
+[//]: # (2. Diseñar la página principal con legueo)
 
-# Aplicaciones utilizadas
-1. Dia para diagramar
-2. figma para el diseño de pantallas
-3. [colorhunt](https://colorhunt.co/palette/fbf8f1f7ecdee9dac154bab9) para seleccionar colores 
-4. [Colores Diseño web ](4. https://www.useit.es/blog/6-paletas-de-colores-para-diseno-web)
+[//]: # (3. Funcionalidad a login y pasar a página logueado)
 
-## Requisitos
-Menú de navegación
+[//]: # (#### )
 
-1. Establecer las pantallas 
-   1. Pantalla princial 
-      1. Header sin logueo
-      2. header con logueo
-      3. menu navegación
-      4. main
-      5. footer
-   2. Panatalla de productos
-      1. Cesta de la compra
-   3. Pantalla de familias
-   4. Pantalla de tiendas
-   5. Pagar (paypall)
-   6. Generar factura (pdf)
+[//]: # ()
+[//]: # (# Aplicaciones utilizadas)
 
-## Diseño de mokups o pantallas
+[//]: # (1. Dia para diagramar)
 
-1. Pantalla principal sin logueo
-2. 
-3. Pantalla principal con logueo
-4. 
+[//]: # (2. figma para el diseño de pantallas)
+
+[//]: # (3. [colorhunt]&#40;https://colorhunt.co/palette/fbf8f1f7ecdee9dac154bab9&#41; para seleccionar colores )
+
+[//]: # (4. [Colores Diseño web ]&#40;4. https://www.useit.es/blog/6-paletas-de-colores-para-diseno-web&#41;)
+
+[//]: # ()
+[//]: # (## Requisitos)
+
+[//]: # (Menú de navegación)
+
+[//]: # ()
+[//]: # (1. Establecer las pantallas )
+
+[//]: # (   1. Pantalla princial )
+
+[//]: # (      1. Header sin logueo)
+
+[//]: # (      2. header con logueo)
+
+[//]: # (      3. menu navegación)
+
+[//]: # (      4. main)
+
+[//]: # (      5. footer)
+
+[//]: # (   2. Panatalla de productos)
+
+[//]: # (      1. Cesta de la compra)
+
+[//]: # (   3. Pantalla de familias)
+
+[//]: # (   4. Pantalla de tiendas)
+
+[//]: # (   5. Pagar &#40;paypall&#41;)
+
+[//]: # (   6. Generar factura &#40;pdf&#41;)
+
+[//]: # ()
+[//]: # (## Diseño de mokups o pantallas)
+
+[//]: # ()
+[//]: # (1. Pantalla principal sin logueo)
+
+[//]: # (2. )
+
+[//]: # (3. Pantalla principal con logueo)
+
+[//]: # (4. )
