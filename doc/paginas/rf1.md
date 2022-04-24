@@ -1,4 +1,11 @@
 # Requisito funcional 1: Pantalla principal o layout y logueo
+ Este requisito va a conllevar las siguientes acciones
+1. Diseño del layout
+2. Diseno de la página principal
+3. Formulario para el logueo
+4. Gestionar el login 
+
+
 ## Diseño de layout
 * Diseño de la pantalla principal.
 * Establecemos con ***balsamiq*** la siguiente pantalla principal
@@ -125,7 +132,56 @@ php artisan serve &
 
 ```
 
+A continuación vamos a diseñar la página principal. En ella vamos a realizar el siguiente diseño para el ***header*** y para el ***footer***
+Ambos son elementos fijos para todas las páginas, por lo que los especificamos en el layout 
 
+![Diseño de header y de footer](./../imagenes/mockups/header_footer.png)
+***
+### El header
+El header va a tener tres elementos que vamos a distribuir de la siguiente manera:
+1. diseño flexible ***(flex)***
+2. Colocado en una fila , o sea  horizontalmente ***flex-col***
+3. Los elemntos distribuidos de forma que ocupen todo en el eje horizontal ***justify-beetwen***
+4. centrado en el eje vertical ***items-center***
+5. vamos a poner un pading para que no esté pegado al borde ***p-8***
 
+Esto se traduce con las siguientes clases en el ***header*** del layout
 
+```css
+<header class="bg-header h-15v flex flex-row justify-between items-center p-8">
+```
 
+Ahora diseñaremos cada uno de los tres elementos:
+1. El logo
+2. El título de la empresa
+3. La sección de login o logout
+
+#### img: el logo
+* El logo lo vamos a descargar de la web, buscamos una imagen que sea free y la descargamos
+* La ubicamos en la carpeta ***public/images/logo.png*** (creamos la carpeta)
+* En el diseño estableceremos que no sobresalga del contenedor (el header) donde esté ubicada, y referenciaremos su ubicación con el helper ***asset***, quedando el elemento como sigue
+```html
+<img class="max-h-full" src="{{asset("images/logo1.png")}}" alt="logo">
+
+```
+#### El título
+ Para el título vamos a poner un nombre y lo dotaremos de un tamaño grande y un color 
+```html
+ <h1 class="max-h-full text-6xl text-red-100">Tienda de componentes</h1>
+```
+#### La sección login- logout
+
+Como ya hemos comentado esta es la sección más complicada pero laravel nos ofrece herramientas para facilitarnos el trabajo
+En blade, podemos saber si estamso logueados, con la directiva ***@auth***, y si no lo estamos con la directiva ***@guest*** (o sea, que somo invitados). Con ello podemos establecer:
+```html
+
+@auth
+ aquí el html que solo saldrá si estoy logueado
+@endauth
+@guest
+ aquí el html que solo saldrá si NO estoy  logueado
+@endguest
+
+```
+
+Por otro lado, vamos a establecer en la propia cabecera el formulario para loguarnos (usuario y password). Para ello pondremos dos cajas de texto
