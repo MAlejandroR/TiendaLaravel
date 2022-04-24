@@ -5,7 +5,7 @@
  Realizamos un diseño usando [balsamiq](https://balsamiq.cloud/). Es una herramienta de pago, pero online, podemos acceder a ella con nuestra cuenta de correo, si bien tiene una tiempo de prueba de un mes. Se puede conseguir clave de estudiante (estudiantes matriculados )a través del centro por un tiempo.
   Accedemos a la plataforma, el diseño es totalmente intuitivo. Realizamos un primer diseño para nuestro ***layout***
 
-![Layout 1 ](../imagenes/mokups/layout_1.png)
+![Layout 1 ](../imagenes/mockups/layout_1.png)
 ***
 
 
