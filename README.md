@@ -6,7 +6,6 @@
 
 
 
-
 # Planteando el proyecto
 
 Vamos a realizar un desarrollo incremental de diferentes sprints muy sencillos.
@@ -44,16 +43,11 @@ Para ello utilizaremos diferentes herramientas que vamos a ir referenciando en e
        <img src="./doc/diagramas/png/RNF1.png" width="280" height="280" alt="Requisito no funcional 1">
  ***
 
-
-
-
-
-
-
 ## Preparando el sistema para el diseño gráfico y la autenticación
 
-*Para la interfaz gráfica, vamos a utilizar *****(tailwindcss)[https://tailwindcss.com/]****
-*Como vamos a utilizar autentificación instalamos el paquete ***breeze*** de laravel que ya trae la instalación de taildwind
+* Para la interfaz gráfica, vamos a utilizar *****(tailwindcss)[https://tailwindcss.com/]**** ***[Tailwindcss](https://tailwindcss.com/docs)***
+
+* Como vamos a utilizar autentificación instalamos el paquete ***breeze*** de laravel que ya trae la instalación de taildwind
 
 ```bash
 composer require laravel/breeze
