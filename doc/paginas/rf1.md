@@ -5,7 +5,7 @@
  Realizamos un diseño usando [balsamiq](https://balsamiq.cloud/). Es una herramienta de pago, pero online, podemos acceder a ella con nuestra cuenta de correo, si bien tiene una tiempo de prueba de un mes. Se puede conseguir clave de estudiante (estudiantes matriculados )a través del centro por un tiempo.
   Accedemos a la plataforma, el diseño es totalmente intuitivo. Realizamos un primer diseño para nuestro ***layout***
 
-![Layout 1 ](../doc/imagenes/mokups/layout_1.png)
+![Layout 1 ](../imagenes/mokups/layout_1.png)
 ***
 
 
@@ -13,7 +13,7 @@ Vamos a añadir clases en ***tailwind*** para poder disponser de estas alturas y
 elegido. Para los colores de fondo nos vasamos en la web https://www.useit.es/blog/6-paletas-de-colores-para-diseno-web
 y seleccionamos la primera:
 
-![Colores Seleccionados](../doc/imagenes/seleccion_colores.png)
+![Colores Seleccionados](../imagenes/seleccion_colores.png)
 
 Por lo que queremos incorporar las siguientes clases en ***tailwind***:
 
