@@ -34,7 +34,7 @@ Para ello utilizaremos diferentes herramientas que vamos a ir referenciando en e
 
 ![Requisito funcional 1](./doc/diagramas/png/RF4.png)
 ***
-6. ***RF6*** La Administradora puede gestionar todas las tablas de la tienda (Productos- Tiendas y Familias)
+6. ***RF5*** La Administradora puede gestionar todas las tablas de la tienda (Productos- Tiendas y Familias)
 
 ![Requisito funcional 1](./doc/diagramas/png/RF5.png)
 ***
@@ -80,7 +80,12 @@ Vemos que nos ha creado una serie de ficheros que carpetas que vamos a comentar.
 
 ### Implementación de los requisitos funciones
 
-[Pantalla principal y logueo](./doc/paginas/rf1.md)
+[RF1:  Pantalla principal y logueo](./doc/paginas/rf1.md)
+[RF2:  Usuario no logueado visaliza productos](./doc/paginas/rf1.md)
+[RF3:  Usuarios se registran](./doc/paginas/rf1.md)
+[RF4:  Usuario logueado compra, ve factura y paga](./doc/paginas/rf1.md)
+[RFNF:  Usuario puede ser admin no solo logueado](./doc/paginas/rf1.md)
+[RF5:  Administrador gestiona productos, familias y tiendas](./doc/paginas/rf1.md)
 
 [//]: # ()
 [//]: # (2. Diseñar la página principal con legueo)
