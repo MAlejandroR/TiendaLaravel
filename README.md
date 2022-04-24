@@ -80,7 +80,7 @@ Vemos que nos ha creado una serie de ficheros que carpetas que vamos a comentar.
 
 ### Implementación de los requisitos funciones
 
-[Pantalla principla y logue](./doc/paginas/rf1.md)
+[Pantalla principal y logueo](./doc/paginas/rf1.md)
 
 2. Diseñar la página principal con legueo
 3. Funcionalidad a login y pasar a página logueado

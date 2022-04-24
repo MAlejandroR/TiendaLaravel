@@ -1,5 +1,5 @@
-# Requisito funcional 1
-
+# Requisito funcional 1: Pantalla principal o layout y logueo
+## Diseño de layout
 * Diseño de la pantalla principal.
 * Establecemos con ***balsamiq*** la siguiente pantalla principal
  Realizamos un diseño usando [balsamiq](https://balsamiq.cloud/). Es una herramienta de pago, pero online, podemos acceder a ella con nuestra cuenta de correo, si bien tiene una tiempo de prueba de un mes. Se puede conseguir clave de estudiante (estudiantes matriculados )a través del centro por un tiempo.
