@@ -183,39 +183,101 @@ En blade, podemos saber si estamso logueados, con la directiva ***@auth***, y si
 @endguest
 
 ```
+Para poder implementar y probar esto, necesitamos tener configurada la base de datos. Vamos a ello.
+
 ##### Conexión con la base de datos
 
 * Tenemos que tener una conexión con la base de datos, y haber ejectutado las migraciones que trae laravel para podernos autentificar.
 * Para ello descargamos el docker que ya tiene la base de datos de la tienda y en ella vamos a incorporar las tablas de usuarios para loguearnos
 * 
 ###### Instalando un contenedor con docker
-1. Creamos un contenedor llamado mysql a partir de la imagen que tenmos subida a docker hub llamada ***manolo/certificado-web:v2*** Esta imagen trae instalado:
-   1. ***mysql***
-   2. ***phpmyadmin*** (por lo tanto php y apache2)
-   3. en mysql tenemos una base de datos llamada ***dwes*** que es con la que vamos a trabajar
+  1. Creamos un contenedor llamado mysql a partir de la imagen que he actualizado en  docker hub llamada ***manolo/web:v1*** Esta imagen trae instalado:
+     1. ***mysql***
+     2. ***phpmyadmin*** (por lo tanto php y apache2)
+     3. en mysql tenemos una base de datos llamada ***dwes*** que es con la que vamos a trabajar
+Este comando lo podemos ejecutar en cualquier ubicación 
 ```shell
-docker run --name mysql -ti manolo/certificado-web:v1 
+docker run --name mysql -ti manolo/web:v1 
 ```
 
 2. Por comodidad vamos a crearnos un shell que nos arranque el docker con los servicios ***mysql y apache2***. creamos un fichero llamado por ejemplo ***start_docker*** con el siguiente contenido
 ```shell
 docker start mysql
 docker exec mysql service mysql start
-docker exec myadl service apache2 start 
+docker exec mysql service apache2 start 
 ```
 3. Le damos permisos de ejecución
 ```shell
-sudo chmos -x start_docker 
+sudo chmod -x start_docker 
 ```
 4.- Lo ejecutamos (observa que hay que especificar de manera explícita dónde se ubica el fichero)
 
 ```shell
 ./start_doker
 ```
+Tras ejecutar este comando ya tenemos activo nuestro docker, una máqina con un servidor de base de datos
+Podemos comprobar abriendo un navegador y escribiendo http://172.17.0.2/phpmyadmin ***172.17.0.2*** es la ip del docker ***mysql***, verifica que tengas esa ip o actualizala. y nos debe de abrir ***phpmyadmin***
+Recuerda que este docker en mysql tiene los siguientes usuarios creaods
+1. ***root*** con password ***root12345***
+2. ***dwes12345*** con password ***Abc123.@***
+
+***
 ###### Parámetros de conexión y ejecutar las migraciones
+Establecemos los credenciales de conexión en el ficheor ***.env*** (Verifica la ***ip***) 
+```php
+DB_CONNECTION=mysql
+DB_HOST=172.17.0.2
+DB_PORT=3306
+DB_DATABASE=dwes
+DB_USERNAME=dwes12345
+DB_PASSWORD=Abc123.@
+```
+Ejecutamos las migraciones para que se creen la tabla ***users*** para crear usuarios
 
+```shell
+php artisan migrate
+```
+Vemos que nos ha creado la tabla ***users*** (entre otra) en la base de datos ***dwes***, podemos ver un pantallazo de phpmyadmin, después de ejecutar la migración
 
+![Tablas creadas](../imagenes/tablas_migrate.png)
+***
 
+##### Retomando el login logout
 
-*Previamente tenm
-Por otro lado, vamos a establecer en la propia cabecera el formulario para loguearnos (usuario y password). Para ello pondremos dos cajas de texto. El único requisito es que los nombres de los inputs
+Ahora ya podemos establecer el login y el register. Establecemos el código html, con las siguientes especificaciones
+1. ***login*** => va a ser un post a la ruta ***login***, enviándole los input ***email*** y ***password***
+2. Insertamos en el value de email el último valor insertado, usando el helper ***old("email")***
+3. ***Regsitrar*** será una solicitud get a la route ***register***
+4. Si tras el intento de ***login***, hay herrores, visualizamos un mensaje ***@ if ($errors->any()***
+
+El código quedaría:
+
+``` html
+      @auth
+            <h3>Usuario {{auth()->user()->name}}</h3>
+            <form action="{{route("logout")}}" method="post">
+                @csrf
+                <x-button>
+                    Logout
+                </x-button>
+            </form>
+
+        @endauth
+        @guest
+
+            <form action="{{route('login')}}" method="POST">
+                @csrf
+                <x-input type="text" value="{{old('email')}}" name="email" class="text-xs" size="10"  placeholder="email"/>
+                <x-input type="text" name="password" class="text-xs" size="10" placeholder="password"/>
+                <br><br>
+                <x-button>Login</x-button>
+                <x-ancla ref='{{route("register")}}'>
+                    Registrarse
+                </x-ancla>
+                @if ($errors->any())
+                    <div>Datos incorrectos, vuévelo a intentar</div>
+                @endif
+            </form>
+        @endguest
+```
+
